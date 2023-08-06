@@ -13,13 +13,6 @@ import java.net.URL;
 public class AppiumConfig {
 
     public static AppiumDriver<MobileElement> driver;
-    /*
-      "platformName": "Android",
-  "deviceName": "Nex6",
-  "platformVersion": "8.0",
-  "appPackage": "com.telran.ilcarro",
-  "appActivity": ".SplashActivity"
-     */
 
     @BeforeSuite
     public void setUp() {

@@ -17,6 +17,7 @@ public class AppiumConfig {
     @BeforeSuite
     public void setUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName", "Nex6");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.0");

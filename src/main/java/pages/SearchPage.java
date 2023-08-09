@@ -11,6 +11,9 @@ public class SearchPage extends BasePage{
         super(driver);
     }
 
+    @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/findTitle']")
+    MobileElement title;
+
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/editLocation']")
     MobileElement inputLocation;
 
@@ -32,6 +35,15 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/searchBtn']")
     MobileElement yallaBTN;
 
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc='More options']")
+    MobileElement openMenu;
+
+    @FindBy(xpath = "//*[@text='Login']")
+    MobileElement login;
+
+    @FindBy(xpath = "//*[@text='Registration']")
+    MobileElement registration;
+
     public void fillSearchForm(String city, int dateFrom, int dateTo) {
         wait(inputLocation, 15);
         typeText(inputLocation, city);
@@ -49,6 +61,26 @@ public class SearchPage extends BasePage{
         click(okBTNCalendar);
 
         click(yallaBTN);
+    }
+
+    public void openRegistrationPage() {
+        wait(inputLocation, 15);
+        click(openMenu);
+        wait(registration, 5);
+        click(registration);
+    }
+
+    public boolean validateTitle() {
+        wait(title, 20);
+        String expectedResult = "Find your car now!".toUpperCase();
+        String actualResult = getText(title);
+        if(expectedResult.equals(actualResult)) {
+            return true;
+        } else {
+            System.out.println("Expected result: " + expectedResult +
+                    " actual result: " + actualResult);
+            return false;
+        }
     }
 
 

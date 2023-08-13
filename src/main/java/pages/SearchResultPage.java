@@ -6,10 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchResultPage extends BasePage{
 
-    public SearchResultPage(AppiumDriver<MobileElement> driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/resultTitle']")
     MobileElement title;
 

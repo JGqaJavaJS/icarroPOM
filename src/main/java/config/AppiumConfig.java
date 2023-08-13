@@ -12,10 +12,20 @@ import java.net.URL;
 
 public class AppiumConfig {
 
-    public static AppiumDriver<MobileElement> driver;
+    private static AppiumDriver<MobileElement> driver;
+
+    // Appi app = new Appi();   app.callFuncr()...
+    //if class static then -> Appi.callFunct();
+
+    public static AppiumDriver getDriver() {
+        if(driver == null) {
+            driver = setUp();
+        }
+        return driver;
+    }
 
     @BeforeSuite
-    public void setUp() {
+    private static AppiumDriver setUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName","Android");
@@ -32,10 +42,11 @@ public class AppiumConfig {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        return driver;
     }
 
     @AfterSuite
-    public void tearDown() {
+    public static void tearDown() {
         driver.quit();
     }
 

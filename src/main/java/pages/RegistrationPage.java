@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class RegistrationPage extends BasePage{
 
-    public RegistrationPage(AppiumDriver<MobileElement> driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/editRegName']")
     MobileElement inputName;
 

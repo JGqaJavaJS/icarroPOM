@@ -1,5 +1,6 @@
 package pages;
 
+import config.AppiumConfig;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -9,11 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    AppiumDriver<MobileElement> driver;
-
-    public BasePage(AppiumDriver<MobileElement> driver) {
-        this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    public BasePage() {
+        PageFactory.initElements(new AppiumFieldDecorator(AppiumConfig.getDriver()), this);
     }
 
     public String getText(MobileElement element) {
@@ -28,11 +26,11 @@ public class BasePage {
         click(element);
         element.clear();
         element.sendKeys(text);
-        driver.hideKeyboard();
+        AppiumConfig.getDriver().hideKeyboard(); // driver.hideKeyboard();
     }
 
     public void wait(MobileElement element, int time) {
-        new WebDriverWait(driver, time)
+        new WebDriverWait(AppiumConfig.getDriver(), time)
                 .until(ExpectedConditions.visibilityOf(element));
     }
 

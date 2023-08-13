@@ -7,10 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
-    public LoginPage(AppiumDriver<MobileElement> driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/editLoginEmail']")
     MobileElement inputEmail;
 
@@ -23,12 +19,6 @@ public class LoginPage extends BasePage{
     public void fillLoginForm(UserDTO userDTO) {
         wait(inputPassword, 10);
         typeText(inputEmail, userDTO.getEmail());
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         typeText(inputPassword, userDTO.getPassword());
         click(btnYalla);
     }

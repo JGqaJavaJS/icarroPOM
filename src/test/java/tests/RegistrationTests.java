@@ -8,7 +8,7 @@ import pages.RegistrationPage;
 import pages.SearchPage;
 import utils.RandomUtils;
 
-public class RegistrationTests extends AppiumConfig {
+public class RegistrationTests extends BaseTest {
 
     /*
         String name;
@@ -19,7 +19,6 @@ public class RegistrationTests extends AppiumConfig {
 
     @Test
     public void registrationTestPositive() {
-        RandomUtils randomUtils = new RandomUtils();
         String email = randomUtils.generateRandomEmail();
         System.out.println(email + "________________ email");
         UserDTO userDTO = UserDTO.builder()
@@ -28,9 +27,7 @@ public class RegistrationTests extends AppiumConfig {
                 .email(email)
                 .password("$12345Rrmn")
                 .build();
-        SearchPage searchPage = new SearchPage(driver);
         searchPage.openRegistrationPage();
-        RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.fillRegistrationForm(userDTO);
         Assert.assertTrue(searchPage.validateTitle());
     }

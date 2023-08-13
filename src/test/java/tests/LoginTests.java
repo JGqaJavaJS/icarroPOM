@@ -8,17 +8,17 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SearchPage;
 
-public class LoginTests extends AppiumConfig {
+public class LoginTests extends BaseTest {
 
     String email = "aaaaa@mail.com";
     String password = "123456Aa$";
 
     @BeforeTest
     public void checkLogout() {
-        SearchPage searchPage = new SearchPage(driver);
-        if(searchPage.logoutIfExist()){
-            searchPage.openLoginPage();
-        } else if (0 ==19) {
+//        if(searchPage.logoutIfExist()){
+//            searchPage.openLoginPage();
+//        } else
+            if (0 ==19) {
 
 
 
@@ -37,20 +37,18 @@ public class LoginTests extends AppiumConfig {
     public void loginPositiveTest() {
         UserDTO userDTO = UserDTO.builder()
                 .email(email).password(password).build();
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.fillLoginForm(userDTO);
-        SearchPage searchPage = new SearchPage(driver);
         Assert.assertTrue(searchPage.validateTitle());
     }
 
-    @Test
-    public void loginPositiveTest2() {
-        UserDTO userDTO = UserDTO.builder()
-                .email(email).password(password).build();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.fillLoginForm(userDTO);
-        SearchPage searchPage = new SearchPage(driver);
-        Assert.assertTrue(searchPage.validateTitle());
-    }
+//    @Test
+//    public void loginPositiveTest2() {
+//        UserDTO userDTO = UserDTO.builder()
+//                .email(email).password(password).build();
+//        LoginPage loginPage = new LoginPage(driver);
+//        loginPage.fillLoginForm(userDTO);
+//        SearchPage searchPage = new SearchPage(driver);
+//        Assert.assertTrue(searchPage.validateTitle());
+//    }
 
 }

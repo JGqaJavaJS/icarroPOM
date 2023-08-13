@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.SearchPage;
 import pages.SearchResultPage;
 
-public class SearchTests extends AppiumConfig {
+public class SearchTests extends BaseTest {
 
     String city = "Tel Aviv";
     int dateFrom = 3;
@@ -14,9 +14,7 @@ public class SearchTests extends AppiumConfig {
 
         @Test
     public void testSearchFormPositive() {
-            SearchPage searchPage = new SearchPage(driver);
             searchPage.fillSearchForm(city, dateFrom, dateTo);
-            SearchResultPage searchResultPage = new SearchResultPage(driver);
             Assert.assertTrue(searchResultPage.validateTitle());
         }
 }

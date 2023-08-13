@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class SearchPage extends BasePage{
-    public SearchPage(AppiumDriver<MobileElement> driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//*[@resource-id='com.telran.ilcarro:id/findTitle']")
     MobileElement title;

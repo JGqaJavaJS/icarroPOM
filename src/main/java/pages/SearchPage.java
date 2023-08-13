@@ -37,12 +37,19 @@ public class SearchPage extends BasePage{
 
     @FindBy(xpath = "//android.widget.ImageView[@content-desc='More options']")
     MobileElement openMenu;
+    // //android.widget.ImageView[@content-desc="More options"]
+
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
+    MobileElement openMenuLogout;
 
     @FindBy(xpath = "//*[@text='Login']")
     MobileElement login;
 
     @FindBy(xpath = "//*[@text='Registration']")
     MobileElement registration;
+
+    @FindBy(xpath = "//*[@text='Logout']")
+    MobileElement logout;
 
     public void fillSearchForm(String city, int dateFrom, int dateTo) {
         wait(inputLocation, 15);
@@ -82,6 +89,28 @@ public class SearchPage extends BasePage{
             return false;
         }
     }
+
+    public void openLoginPage() {
+        wait(inputLocation, 15);
+        click(openMenu);
+        wait(login, 5);
+        click(login);
+    }
+
+    public boolean logoutIfExist() {
+
+        try {
+            wait(openMenuLogout, 3);
+            click(openMenuLogout);
+            wait(logout, 2);
+            click(logout);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    }
+
+
 
 
 

@@ -37,4 +37,8 @@ public class BasePage {
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void clickBackBTNPhone() {
+        AppiumConfig.getDriver().navigate().back();
+    }
+
 }

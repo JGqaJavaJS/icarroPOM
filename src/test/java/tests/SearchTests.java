@@ -14,7 +14,7 @@ public class SearchTests extends BaseTest {
 
         @Test
     public void testSearchFormPositive() {
-            searchPage.fillSearchForm(city, dateFrom, dateTo);
+            searchResultPage = searchPage.fillSearchForm(city, dateFrom, dateTo);
             Assert.assertTrue(searchResultPage.validateTitle());
         }
 }

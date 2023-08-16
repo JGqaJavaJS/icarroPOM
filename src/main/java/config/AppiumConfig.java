@@ -45,9 +45,9 @@ public class AppiumConfig {
         return driver;
     }
 
-    @AfterSuite
-    public static void tearDown() {
-        driver.quit();
-    }
+//    @AfterSuite
+//    public static void tearDown() {
+//        driver.quit();
+//    }
 
 }

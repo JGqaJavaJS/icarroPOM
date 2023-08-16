@@ -48,7 +48,7 @@ public class SearchPage extends BasePage{
     @FindBy(xpath = "//*[@text='Logout']")
     MobileElement logout;
 
-    public void fillSearchForm(String city, int dateFrom, int dateTo) {
+    public SearchResultPage fillSearchForm(String city, int dateFrom, int dateTo) {
         typeText(inputLocation, city);
 
         click(inputDateFrom);
@@ -62,11 +62,13 @@ public class SearchPage extends BasePage{
         click(okBTNCalendar);
 
         click(yallaBTN);
+        return new SearchResultPage();
     }
 
-    public void openRegistrationPage() {
+    public RegistrationPage openRegistrationPage() {
         click(openMenu);
         click(registration);
+        return new RegistrationPage();
     }
 
     public boolean validateTitle() {
@@ -85,6 +87,10 @@ public class SearchPage extends BasePage{
         click(openMenu);
         click(login);
         return new LoginPage();
+    }
+
+    public void clickTitle() {
+        click(title);
     }
 
     public boolean logoutIfExist() {

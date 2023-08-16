@@ -1,12 +1,8 @@
 package tests;
 
-import config.AppiumConfig;
 import dto.UserDTO;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.RegistrationPage;
-import pages.SearchPage;
-import utils.RandomUtils;
 
 public class RegistrationTests extends BaseTest {
 
@@ -27,8 +23,7 @@ public class RegistrationTests extends BaseTest {
                 .email(email)
                 .password("$12345Rrmn")
                 .build();
-        searchPage.openRegistrationPage();
-        registrationPage.fillRegistrationForm(userDTO);
+        searchPage = searchPage.openRegistrationPage().fillRegistrationForm(userDTO);
         Assert.assertTrue(searchPage.validateTitle());
     }
 }

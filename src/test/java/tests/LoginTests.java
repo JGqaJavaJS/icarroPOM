@@ -13,31 +13,32 @@ public class LoginTests extends BaseTest {
     String email = "aaaaa@mail.com";
     String password = "123456Aa$";
 
-    @BeforeTest
-    public void checkLogout() {
-//        if(searchPage.logoutIfExist()){
+//    @BeforeTest
+//    public void checkLogout() {
+////        if(searchPage.logoutIfExist()){
+////            searchPage.openLoginPage();
+////        } else
+//            if (0 ==19) {
+//
+//
+//
 //            searchPage.openLoginPage();
-//        } else
-            if (0 ==19) {
-
-
-
-            searchPage.openLoginPage();
-        } else {
-            searchPage.openLoginPage();
-        }
-
-            /*
-            if first login positive - we ll logout and need to do logout and open login
-            if first negative -> error popup (alert) - then click ok btn
-             */
-    }
+//        } else {
+//            searchPage.openLoginPage();
+//        }
+//
+//            /*
+//            if first login positive - we ll logout and need to do logout and open login
+//            if first negative -> error popup (alert) - then click ok btn
+//             */
+//    }
 
     @Test
     public void loginPositiveTest() {
+
         UserDTO userDTO = UserDTO.builder()
                 .email(email).password(password).build();
-        loginPage.fillLoginForm(userDTO);
+        searchPage.openLoginPage().fillLoginForm(userDTO);
         Assert.assertTrue(searchPage.validateTitle());
     }
 

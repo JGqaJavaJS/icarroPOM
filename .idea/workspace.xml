@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="389eef82-4617-4536-bd24-ba1542aad74f" name="Changes" comment="refactoring for project structure">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="389eef82-4617-4536-bd24-ba1542aad74f" name="Changes" comment="upd wait">
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SplashTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SplashTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +68,7 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/julia/Documents/java/qa38/icarroPOM&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.RegistrationTests">
+  <component name="RunManager" selected="Gradle.LoginTests.loginPositiveTest">
     <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -161,7 +165,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="SearchTests.testSearchFormPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SplashTests.title2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +178,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.SearchTests.testSearchFormPositive&quot;" />
+            <option value="&quot;tests.SplashTests.title2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LoginTests.loginPositiveTest" />
+        <item itemvalue="Gradle.SplashTests.title2Test" />
         <item itemvalue="Gradle.RegistrationTests" />
         <item itemvalue="Gradle.LoginTests" />
-        <item itemvalue="Gradle.LoginTests.loginPositiveTest" />
         <item itemvalue="Gradle.RegistrationTests.registrationTestPositive" />
-        <item itemvalue="Gradle.SearchTests.testSearchFormPositive" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691949123670</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="upd wait">
+      <option name="closed" value="true" />
+      <created>1692202022838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692202022838</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,6 +291,7 @@
     <MESSAGE value="tests for registration" />
     <MESSAGE value="add logout partly" />
     <MESSAGE value="refactoring for project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring for project structure" />
+    <MESSAGE value="upd wait" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd wait" />
   </component>
 </project>

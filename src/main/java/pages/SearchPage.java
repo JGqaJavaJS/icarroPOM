@@ -81,9 +81,10 @@ public class SearchPage extends BasePage{
         }
     }
 
-    public void openLoginPage() {
+    public LoginPage openLoginPage() {
         click(openMenu);
         click(login);
+        return new LoginPage();
     }
 
     public boolean logoutIfExist() {

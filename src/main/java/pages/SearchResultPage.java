@@ -11,7 +11,7 @@ public class SearchResultPage extends BasePage{
 
     public boolean validateTitle() {
         String expectedResult = "Search result".toUpperCase();
-        String actualResult = getText(title);
+        String actualResult = getText(title, 15);
         if(expectedResult.equals(actualResult)) {
             return true;
         } else {

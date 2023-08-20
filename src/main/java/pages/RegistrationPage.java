@@ -26,12 +26,12 @@ public class RegistrationPage extends BasePage {
     MobileElement btnYalla;
 
     public SearchPage fillRegistrationForm(UserDTO userDTO) {
-        typeText(inputName, userDTO.getName());
-        typeText(inputLastName, userDTO.getLastName());
-        typeText(inputEmail, userDTO.getEmail());
-        typeText(inputPassword, userDTO.getPassword());
-        click(checkBar);
-        click(btnYalla);
+        typeText(inputName, userDTO.getName(), 15);
+        typeText(inputLastName, userDTO.getLastName(), 15);
+        typeText(inputEmail, userDTO.getEmail(), 15);
+        typeText(inputPassword, userDTO.getPassword(), 15);
+        click(checkBar, 15);
+        click(btnYalla, 15);
         return new SearchPage();
     }
 

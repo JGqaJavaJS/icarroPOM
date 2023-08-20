@@ -10,6 +10,6 @@ public class SplashPage extends BasePage{
     MobileElement widgetTextView;
 
     public String getTextTitle2() {
-        return getText(widgetTextView);
+        return getText(widgetTextView, 15);
     }
 }

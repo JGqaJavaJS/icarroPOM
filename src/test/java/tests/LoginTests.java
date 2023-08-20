@@ -16,15 +16,21 @@ public class LoginTests extends BaseTest {
 
     @BeforeMethod
     public void checkLogout() {
-        if(searchPage.logoutIfExist()){
-            searchPage.openLoginPage();
-        } else if (0 ==19) {
 
+        boolean b =      searchPage.logoutIfExist();
+        System.out.println("---------------- " + b);
+
+        if (b) {
+            loginPage = searchPage.clickOpenMenu(15).openLoginPage();
+        } else if (loginPage.isPopUpErrorOpen()) {
+           loginPage.clickOkPopUp();
 // to check po0p up after negative login
-
         } else {
-            searchPage.clickBackBTNPhone();
-            searchPage.openLoginPage();
+//            searchPage.clickBackBTNPhone();
+//            loginPage = searchPage.clickOpenMenu(15).openLoginPage();
+            
+                loginPage = searchPage.openLoginPage();
+
         }
 
             /*
@@ -45,8 +51,16 @@ public class LoginTests extends BaseTest {
     public void loginPositiveTest2() {
         UserDTO userDTO = UserDTO.builder()
                 .email(email).password(password).build();
-    searchPage = loginPage.fillLoginForm(userDTO);
+        searchPage = loginPage.fillLoginForm(userDTO);
         Assert.assertTrue(searchPage.validateTitle());
+    }
+
+    @Test
+    public void loginNegativeTest() {
+        UserDTO userDTO = UserDTO.builder()
+                .email("abdsjh@bb").password(password).build();
+        loginPage.fillLoginForm(userDTO);
+        Assert.assertTrue(loginPage.validatePopUpErrorMessage());
     }
 
 }

@@ -36,8 +36,8 @@ public class SearchPage extends BasePage{
     MobileElement openMenu;
     // //android.widget.ImageView[@content-desc="More options"]
 
-    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
-    MobileElement openMenuLogout;
+//    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"More options\"]")
+//    MobileElement openMenuLogout;
 
     @FindBy(xpath = "//*[@text='Login']")
     MobileElement login;
@@ -49,31 +49,25 @@ public class SearchPage extends BasePage{
     MobileElement logout;
 
     public SearchResultPage fillSearchForm(String city, int dateFrom, int dateTo) {
-        typeText(inputLocation, city);
+        typeText(inputLocation, city, 15);
 
-        click(inputDateFrom);
-        click(nextMonthCalendar);
-        click(dayOnCalendar.get(dateFrom-1));
-        click(okBTNCalendar);
+        click(inputDateFrom, 15);
+        click(nextMonthCalendar, 15);
+        click(dayOnCalendar.get(dateFrom-1), 15);
+        click(okBTNCalendar, 15);
 
-        click(inputDateTo);
-        click(nextMonthCalendar);
-        click(dayOnCalendar.get(dateTo-1));
-        click(okBTNCalendar);
+        click(inputDateTo, 15);
+        click(nextMonthCalendar, 15);
+        click(dayOnCalendar.get(dateTo-1), 15);
+        click(okBTNCalendar, 15);
 
-        click(yallaBTN);
+        click(yallaBTN, 15);
         return new SearchResultPage();
-    }
-
-    public RegistrationPage openRegistrationPage() {
-        click(openMenu);
-        click(registration);
-        return new RegistrationPage();
     }
 
     public boolean validateTitle() {
         String expectedResult = "Find your car now!".toUpperCase();
-        String actualResult = getText(title);
+        String actualResult = getText(title, 15);
         if(expectedResult.equals(actualResult)) {
             return true;
         } else {
@@ -83,24 +77,34 @@ public class SearchPage extends BasePage{
         }
     }
 
+    public SearchPage clickOpenMenu (int time) {
+        click(openMenu, time);
+        return this;
+    }
+
     public LoginPage openLoginPage() {
-        click(openMenu);
-        click(login);
+        click(login, 15);
         return new LoginPage();
     }
 
-    public void clickTitle() {
-        click(title);
+    public RegistrationPage openRegistrationPage() {
+        click(registration, 15);
+        return new RegistrationPage();
     }
 
     public boolean logoutIfExist() {
         try {
-            click(openMenuLogout);
-            click(logout);
+            clickOpenMenu(15);
+            click(logout, 3);
             return true;
         } catch (Exception e){
+          //  clickBackBTNPhone();
             return false;
         }
+    }
+
+    public void clickTitle() {
+        click(title, 15);
     }
 
 
